@@ -1,0 +1,51 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.loginCard {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+
+}
+.loginCard h2 {
+    margin-bottom: 30px;
+    padding: 10px;
+    color: #575757;
+}
+.button img {
+    width: 30px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* background: rgb(90, 204, 37); */
+    background: linear-gradient(to right,rgb(139, 250, 88) , rgb(90, 204, 37));
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    width: fit-content;
+    border-radius: 10px;
+}
+.button:hover {
+    background: linear-gradient(to right,rgb(119, 216, 74) , rgb(76, 172, 32));
+}
+.button:active {
+    background: linear-gradient(to right,rgb(107, 192, 67) , rgb(72, 161, 31));
+}
+@media (max-width:460px) {
+    .loginCard h2 {
+        font-size: 1.3rem;
+    }
+}
