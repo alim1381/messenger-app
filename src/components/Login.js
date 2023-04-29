@@ -1,5 +1,5 @@
 import React from 'react'
-import { getAuth , signInWithRedirect , getRedirectResult , GoogleAuthProvider } from 'firebase/auth';
+import { getAuth , signInWithRedirect , GoogleAuthProvider } from 'firebase/auth';
 import {app} from '../firebase';
 
 // Icons
@@ -10,18 +10,6 @@ import styles from '../styles/Login.module.css';
 export default function Login() {
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
-
-  getRedirectResult(auth)
-    .then((result) => {
-      // This gives you a Google Access Token. You can use it to access Google APIs.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-  
-      // The signed-in user info.
-      const user = result.user;
-     
-      console.log(user);
-    })
 
   const clickHandler = () => {
     signInWithRedirect(auth , provider);
