@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+    background-color: rgb(238, 238, 238) ;
+    color: #418dff;
+    display: flex;
+    align-items: center;
+}
+.divLeft {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+.divLeft span {
+    margin-left: 20px;
+}

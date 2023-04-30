@@ -6,6 +6,7 @@ import {app} from '../firebase';
 import googleLogo from '../assets/icons/Google__G__Logo.svg.png';
 // Styles
 import styles from '../styles/Login.module.css';
+import Navbar from './Navbar';
 
 export default function Login() {
   const provider = new GoogleAuthProvider();
