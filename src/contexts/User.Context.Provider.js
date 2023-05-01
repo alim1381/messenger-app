@@ -12,23 +12,33 @@ export default function UserContextProvider({children}) {
     const history = useNavigate();
 
     useEffect (() => {
-        const auth = getAuth();
-        getRedirectResult(auth)
-            .then((result) => {
-                // console.log(result);
-                setUser(result.user)
+        const local =window.localStorage.getItem("user");
+        let arry ;
+        if (local === null) {
+            const auth = getAuth();
+            getRedirectResult(auth)
+                .then((result) => {
+                    // console.log(result);
+                    setUser(result.user)
+                    window.localStorage.setItem("user" , JSON.stringify(result));
+                    
+                    setLoading(false)
+                    if (user) history('/chat')
                 
-                setLoading(false)
-                if (user) history('/chat')
-            
-
-            // console.log(user);
-            })
-            .catch((error) => {
-                setLoading(false)
-                // console.log(error);
-                if (user) history("/")
-            });
+    
+                // console.log(user);
+                })
+                .catch((error) => {
+                    setLoading(false)
+                    // console.log(error);
+                    if (user) history("/")
+                });
+        } else {
+            arry = JSON.parse(local)
+            setUser(arry.user)
+            setLoading(false)
+            if (user) history('/chat')
+        }
         
 
     } , [])

@@ -3,6 +3,7 @@
     background-color: rgb(238, 238, 238) ;
     color: #418dff;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 .divLeft {
@@ -12,4 +13,37 @@
 }
 .divLeft span {
     margin-left: 20px;
+}
+
+.container button {
+    margin-right: 20px;
+    padding: 10px;
+    background-color: #418dff;
+    border-radius: 5px;
+    border: 0;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+
+}
+.container button:hover {
+    background-color: #377adf;
+
+}
+.container button:active {
+    background-color: #316cc5;
+}
+@media (max-width: 550px) {
+    .divLeft span {
+        display: none;
+    }
+}
+@media (max-width: 265px) {
+    .container h2 {
+        font-size: 15px;
+    }
+    .container button {
+        padding: 10px;
+        font-size: 10px;
+    }
 }
